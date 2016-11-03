@@ -67,7 +67,7 @@ import { Hero } from './hero';
 </div>  
 
 <ul class='heroes'>
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected55]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>

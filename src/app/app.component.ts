@@ -57,20 +57,13 @@ import { Hero } from './hero';
   template: `
 <h1>{{title}}</h1>
 
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name}} details!</h2>
-  <div><label>id: </label>{{selectedHero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-</div>  
-
 <ul class='heroes'>
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected55]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+
+<my-hero-detail [hero]='selectedHero'></my-hero-detail>
 
 `
 })
